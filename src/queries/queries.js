@@ -1,7 +1,14 @@
 export const queries = `{
-    user {
-    firstName
-    lastName
-    }
+  
+  user {
+    login
+    email
+    auditRatio
+  }
+  transaction {
+    path
+    amount type
+  
+}
 }
 `
