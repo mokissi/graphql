@@ -1,5 +1,5 @@
 import {fetchData} from "./fetchData.js"
-import {queries} from "../queries/queries.js"
+
 
 const enpoint = "https://learn.zone01oujda.ma/api/auth/signin"
 export async function getJWT(usename, password, container) {
@@ -12,9 +12,10 @@ export async function getJWT(usename, password, container) {
     })
     const result = await resp.json()
     if (resp.ok) {
+        
         localStorage.setItem("jwt", result)
         container.remove()
-        fetchData(queries)
+
     } else {
         alert(result.error)
     }

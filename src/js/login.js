@@ -1,5 +1,6 @@
 import {getJWT} from "./getJWT.js"
 
+export default function login() {
 const container = document.createElement("div")
 container.className = "container"
 const inputUername = document.createElement("input")
@@ -24,3 +25,13 @@ button.addEventListener("click", ()=> {
     const pass = document.getElementById("password").value
     getJWT(usern, pass, container)
 })
+}
+
+export function logout(){
+    let logout_button=document.querySelector(".button")
+    logout_button.addEventListener("click",(e)=>{
+        e.preventDefault()        
+        localStorage.removeItem('jwt');
+        location.reload();
+    })
+}

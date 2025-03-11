@@ -10,8 +10,7 @@ export async function fetchData(querry) {
         },
     body : JSON.stringify({query: querry})
     })
-    console.log(resp);
     
     const result = await resp.json()
-    console.log(result);
+  return result
 }
